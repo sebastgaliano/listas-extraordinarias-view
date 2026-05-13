@@ -320,7 +320,7 @@ async def post_init(application: Application):
     scheduler.start()
     log.info("⏰ Scheduler iniciado — comprobación cada 4 horas.")
 
-def main():
+async def main():
     if not TOKEN:
         raise ValueError("Falta TELEGRAM_TOKEN. Defínelo como variable de entorno.")
 
@@ -338,7 +338,7 @@ def main():
     app.add_handler(CommandHandler("parar", cmd_parar))
 
     log.info("🤖 Bot arrancado.")
-    app.run_polling()
+    await app.run_polling()
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
