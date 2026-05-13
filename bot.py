@@ -46,6 +46,42 @@ FUENTES = [
         "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
     },
     {
+    "nombre": "ANPE Illes Balears",
+    "url": "https://anpebalears.es/interinos",
+    "selector": "article, .entry-title, h2, h3, .post-title",
+    "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
+},
+{
+    "nombre": "ANPE Canarias",
+    "url": "https://anpecanarias.es/interinos",
+    "selector": "article, .entry-title, h2, h3, .post-title",
+    "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
+},
+{
+    "nombre": "ANPE Murcia",
+    "url": "https://anpemurcia.es/interinos",
+    "selector": "article, .entry-title, h2, h3, .post-title",
+    "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
+},
+{
+    "nombre": "ANPE Galicia",
+    "url": "https://anpegalicia.es/interinos",
+    "selector": "article, .entry-title, h2, h3, .post-title",
+    "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
+},
+{
+    "nombre": "ANPE Asturias",
+    "url": "https://anpeasturias.es/interinos",
+    "selector": "article, .entry-title, h2, h3, .post-title",
+    "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
+},
+{
+    "nombre": "ANPE La Rioja",
+    "url": "https://anpelarioja.es/interinos",
+    "selector": "article, .entry-title, h2, h3, .post-title",
+    "keywords": ["bolsa", "extraordinaria", "informática", "interino", "convocatoria"],
+},
+    {
         "nombre": "ANPE Extremadura",
         "url": "https://anpeextremadura.es/interinos",
         "selector": "article, .entry-title, h2, h3, .post-title",
