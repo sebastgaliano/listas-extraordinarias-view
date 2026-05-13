@@ -320,14 +320,13 @@ async def post_init(application: Application):
     scheduler.start()
     log.info("⏰ Scheduler iniciado — comprobación cada 4 horas.")
 
-async def main():
+def main():
     if not TOKEN:
         raise ValueError("Falta TELEGRAM_TOKEN. Defínelo como variable de entorno.")
 
     app = (
         Application.builder()
         .token(TOKEN)
-        .post_init(post_init)
         .build()
     )
 
@@ -337,8 +336,15 @@ async def main():
     app.add_handler(CommandHandler("estado", cmd_estado))
     app.add_handler(CommandHandler("parar", cmd_parar))
 
+    # Scheduler integrado en el job_queue de telegram
+    app.job_queue.run_repeating(
+        lambda context: asyncio.ensure_future(comprobar_y_notificar(context.bot)),
+        interval=14400,  # 4 horas en segundos
+        first=10,        # Primera comprobación a los 10 segundos de arrancar
+    )
+
     log.info("🤖 Bot arrancado.")
-    await app.run_polling()
+    app.run_polling()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
